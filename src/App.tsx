@@ -154,13 +154,13 @@ function App() {
             <p className="text-gray-400 text-base sm:text-lg">Estamos aquí para escucharte</p>
           </div>
 
-          <div className="flex flex-wrap justify-center items-center gap-8 sm:gap-16">
+          <div className="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-16">
             {/* WhatsApp */}
             <a
               href="https://wa.me/584166082788"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex flex-col items-center space-y-3 text-gray-300 hover:text-green-500 transition-colors group"
+              className="flex flex-col items-center space-y-3 text-gray-300 hover:text-green-500 transition-colors group w-full md:w-auto"
             >
               <div className="w-16 h-16 sm:w-20 sm:h-20 bg-green-500/20 rounded-full flex items-center justify-center group-hover:bg-green-500/30 transition-colors">
                 <MessageCircle className="w-8 h-8 sm:w-10 sm:h-10" />
@@ -171,7 +171,7 @@ function App() {
             {/* Phone */}
             <a
               href="tel:+582124821161"
-              className="flex flex-col items-center space-y-3 text-gray-300 hover:text-blue-400 transition-colors group"
+              className="flex flex-col items-center space-y-3 text-gray-300 hover:text-blue-400 transition-colors group w-full md:w-auto"
             >
               <div className="w-16 h-16 sm:w-20 sm:h-20 bg-blue-500/20 rounded-full flex items-center justify-center group-hover:bg-blue-500/30 transition-colors">
                 <Phone className="w-8 h-8 sm:w-10 sm:h-10" />
@@ -182,7 +182,7 @@ function App() {
             {/* Email */}
             <a
               href="mailto:radiotropical990@gmail.com"
-              className="flex flex-col items-center space-y-3 text-gray-300 hover:text-red-400 transition-colors group"
+              className="flex flex-col items-center space-y-3 text-gray-300 hover:text-red-400 transition-colors group w-full md:w-auto"
             >
               <div className="w-16 h-16 sm:w-20 sm:h-20 bg-red-500/20 rounded-full flex items-center justify-center group-hover:bg-red-500/30 transition-colors">
                 <Mail className="w-8 h-8 sm:w-10 sm:h-10" />
