@@ -1,3 +1,32 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Animaciones personalizadas */
+@keyframes caret-blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+.typing-caret {
+  position: relative;
+  display: inline-block;
+}
+
+.typing-caret::after {
+  content: '';
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  background: white;
+  margin-left: 4px;
+  vertical-align: -2px;
+  animation: caret-blink 1s step-end infinite;
+}
+
+/* Texto de letras justificado y con buen salto de línea */
+.lyrics-text {
+  text-align: justify;
+  hyphens: auto;
+  text-wrap: pretty;
+}

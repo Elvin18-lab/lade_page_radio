@@ -1,10 +1,12 @@
 import { useState, useRef } from 'react';
-import { Play, Pause, Radio, Mail, Phone, MapPin, MessageCircle, Facebook, Youtube, Instagram, DollarSign } from 'lucide-react';
+import { Play, Pause, Radio, Mail, Phone, MessageCircle, Facebook, Youtube, Instagram } from 'lucide-react';
+import Carousel from './components/Carousel';
+import logoSymbol from './assets/solo símbolo-fullcolor.svg';
+import logoText from './assets/solo texto-fullcolor.svg';
 
 function App() {
   const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef<HTMLAudioElement>(null);
-
   const togglePlay = () => {
     if (audioRef.current) {
       if (isPlaying) {
@@ -24,14 +26,31 @@ function App() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
       {/* Navigation */}
-      <nav className="fixed top-0 w-full bg-black/30 backdrop-blur-md z-50 border-b border-white/10">
+      <nav className="fixed top-0 w-full bg-black/50 backdrop-blur-md z-50 border-b border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2 sm:space-x-3">
-              <Radio className="w-6 h-6 sm:w-8 sm:h-8 text-red-500" />
-              <div>
-                <h1 className="text-lg sm:text-2xl font-bold text-white">Tropical 990 AM</h1>
-                <p className="text-[10px] sm:text-xs text-gray-400 italic">¡La Radio Retro!</p>
+              {/* Logo (símbolo) */}
+              <img
+                src={logoSymbol}
+                alt="Logo Tropical 990 AM"
+                className="w-8 h-8 sm:w-10 sm:h-10 object-contain rounded-md bg-white/10 p-1 drop-shadow-lg brightness-110 contrast-125"
+                onError={(e) => {
+                  (e.currentTarget as HTMLImageElement).style.display = 'none';
+                }}
+              />
+              {/* Nombre de la estación (texto) */}
+              <img
+                src={logoText}
+                alt="Tropical 990 AM"
+                className="h-5 sm:h-7 object-contain hidden sm:block drop-shadow-lg brightness-110 contrast-125"
+                onError={(e) => {
+                  (e.currentTarget as HTMLImageElement).style.display = 'none';
+                }}
+              />
+              {/* Fallback accesible */}
+              <div className="sm:hidden">
+                <Radio className="w-6 h-6 text-red-500" aria-hidden="true" />
               </div>
             </div>
 
@@ -52,6 +71,13 @@ function App() {
           </div>
         </div>
       </nav>
+
+      {/* Carrusel superior */}
+      <section className="pt-20 sm:pt-24 px-4 sm:px-6">
+        <div className="max-w-7xl mx-auto">
+          <Carousel position="center" />
+        </div>
+      </section>
 
       {/* Hero Section */}
       <section id="home" className="relative pt-24 sm:pt-32 pb-12 sm:pb-20 px-4 sm:px-6 min-h-screen flex items-center">
