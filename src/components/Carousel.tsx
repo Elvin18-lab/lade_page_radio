@@ -97,7 +97,7 @@ export default function Carousel({
   if (items.length === 0) return null;
 
   return (
-    <section className={`relative w-full ${heightClass} overflow-hidden rounded-xl border border-white/10 bg-black/20 backdrop-blur-md`}
+    <section className={`relative w-full ${heightClass} overflow-hidden rounded-xl border border-neutral-300 bg-white/30 backdrop-blur-md shadow-xl`}
       aria-label="Galería de imágenes de la estación">
       {/* Slides */}
       <div className="absolute inset-0">
@@ -117,11 +117,11 @@ export default function Carousel({
               key={i}
               className={`absolute inset-0 w-full h-full transition-opacity duration-700 ease-in-out ${
                 i === active ? 'opacity-100' : 'opacity-0'
-              } bg-gradient-to-br from-slate-800 via-slate-900 to-black`}
+              } bg-gradient-to-br from-neutral-700 via-neutral-800 to-neutral-900`}
             />
           )
         ))}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-neutral-900/70 via-neutral-900/40 to-transparent" />
       </div>
 
       {/* Overlay contenido */}
@@ -130,10 +130,10 @@ export default function Carousel({
       }`}
       >
         <div className="max-w-5xl mx-auto">
-          <div className="inline-flex items-center px-3 py-1.5 rounded-full bg-white/10 border border-white/20 mb-3">
-            <span className="text-[11px] sm:text-xs text-gray-200 tracking-wider">GALERÍA</span>
+          <div className="inline-flex items-center px-3 py-1.5 rounded-full bg-red-600/90 border border-red-500 mb-3">
+            <span className="text-[11px] sm:text-xs text-white tracking-wider font-semibold">LETRAS DE MÚSICA</span>
           </div>
-          <h3 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-white drop-shadow-xl">
+          <h3 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-white drop-shadow-2xl">
             <span className="typing-caret whitespace-pre-line lyrics-text">
               {items[active]?.text.slice(0, typingIndex)}
             </span>
@@ -148,7 +148,7 @@ export default function Carousel({
             key={i}
             onClick={() => setActive(i)}
             className={`w-2.5 h-2.5 rounded-full transition-all ${
-              i === active ? 'bg-white' : 'bg-white/40 hover:bg-white/60'
+              i === active ? 'bg-red-600 w-6' : 'bg-white/60 hover:bg-white/80'
             }`}
             aria-label={`Ir al slide ${i + 1}`}
           />
