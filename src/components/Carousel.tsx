@@ -1,47 +1,54 @@
 import { useEffect, useMemo, useState } from 'react';
+  import img1 from '../assets/img1.jpg';
+  import img2 from '../assets/img2.jpg';
+  import img3 from '../assets/img3.jpg';
+  import img4 from '../assets/img4.jpg';
+  import img5 from '../assets/img5.jpg';
+  import img6 from '../assets/img6.jpg';
+  import img7 from '../assets/img7.jpg';
 
-  // Tip: coloca tus imágenes en public/assets como img1.jpg ... img7.jpg
-  // Puedes ajustar las rutas y textos según tus necesidades.
+  // Tip: las imágenes están en src/assets (img1.jpg ... img7.jpg). Puedes ajustar rutas/textos según tus necesidades.
   type Slide = {
-    src?: string; // opcional para que no sea obligatorio tener imágenes
+    src?: string; // opcional: si no hay imagen, se muestra degradado
     text: string;
   };
 
   const defaultSlides: Slide[] = [
-    { text:
-`Bad Bunny - Perfumito
-Dime ya, ¿cuándo voy a probar tu perfumito nuevo?
-La otra ve' no te la vi, papi, sé que te la debo` },
+    { text: 
+`Bad Bunny Perfumito - Dime ya, ¿cuándo voy a probar tu perfumito nuevo?
+La otra ve' no te la vi, papi, sé que te la debo Dime ya, ¿cuándo voy a probar tu perfumito nuevo?
+Hoy estoy pa ti, ¿qué vas a hacer si me pego? ` },
 
-    { text:
-`Tainy & Ozuna - En visto
-Quiero una noche como aquella fue, como ninguna
-Escribe por Telegram, ay, por WhatsApp` },
+    { text: 
+`Tainy & Ozuna — En visto - Quiero una Repetir aquella noche fue como ninguna
+Escribe por Telegram, ay, por WhatsApp Sabes que yo te escribo
+Me siento raro de ver tu' foto', ese bobo contigo Bebé, tú sabe'` },
 
-    { text:
-`Tainy & Arcángel - Me Jodí
-Ma yo sé lo que tu necesitas
-Alguien como yo que te de duro mientras gritas` },
+    { text: 
+`Tainy & Arcángel — Me Jodí - Ma yo sé lo que tu necesitas
+Alguien como yo que te de duro mientras gritas
+Que te besen en esos lugares que te excitan
+Mami dime porque conmigo no te desquitas Que problema, nena` },
 
-    { text:
-`Jhayco & mora - 512
-Hoy dice que llega después de las doce
-Y anda en camionetas que parecen troces` },
+    { text: 
+`Jhayco & mora 512 - Hoy dice que llega después de las doce
+Después de las doce, después de las doce Y anda en camionetas que parecen troces
+Que parecen troces, que parecen troces` },
 
-    { text:
-`Jhayco ft. Brray, Ryan Castro
-Pensando como un loco que si no es tu cuerpo más ninguno toco
-Lo de nosotros fue fuera de lo normal` },
+    { text: 
+`Jhayco ft. Brray, Ryan Castro — "Pensando como un loco que si no es tu cuerpo más ninguno toco. 
+Lo de nosotros fue fuera de lo normal, tú dime si me equivoco. Y yo quisiera volver, pero tampoco no me conviene. 
+Tampoco prefiero morir con el corazón roto."` },
 
-    { text:
-`Mora
-Sigo detrás de tu alma, persiguiendo recuerdos
-Recuerdos que me abrazan siempre que tengo miedo` },
+    { text: 
+`Mora — "Sigo detrás de tu alma, persiguiendo recuerdos, recuerdos que me abrazan siempre que tengo miedo. 
+Miedo de no poder verte o de verte con otro. No sé cuál es peor, ninguna dice nosotros. 
+Éxitos que suenan, pero el alma duele."` },
 
-    { text:
-`Mora ft. C. Tangana
-Baby, perdona la hora, es que el dolor no mejora
-Para olvidar tus besos se necesita droga` },
+    { text: 
+`Mora ft. C. Tangana — "Baby, perdona la hora, es que el dolor no mejora. 
+Ya he intentado meditar, pero para olvidar tus besos se necesita droga. Mi tesoro, 
+mi señora. La que me descontrola, DROGA, me tienes enganchado."` },
   ];
 
   interface CarouselProps {
