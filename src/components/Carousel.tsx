@@ -8,41 +8,40 @@ import { useEffect, useMemo, useState } from 'react';
   };
 
   const defaultSlides: Slide[] = [
-    { text: 
-`Bad Bunny Perfumito - Dime ya, ¿cuándo voy a probar tu perfumito nuevo?
-La otra ve' no te la vi, papi, sé que te la debo Dime ya, ¿cuándo voy a probar tu perfumito nuevo?
-Hoy estoy pa ti, ¿qué vas a hacer si me pego? ` },
+    { text:
+`Bad Bunny - Perfumito
+Dime ya, ¿cuándo voy a probar tu perfumito nuevo?
+La otra ve' no te la vi, papi, sé que te la debo` },
 
-    { text: 
-`Tainy & Ozuna — En visto - Quiero una Repetir aquella noche fue como ninguna
-Escribe por Telegram, ay, por WhatsApp Sabes que yo te escribo
-Me siento raro de ver tu' foto', ese bobo contigo Bebé, tú sabe'` },
+    { text:
+`Tainy & Ozuna - En visto
+Quiero una noche como aquella fue, como ninguna
+Escribe por Telegram, ay, por WhatsApp` },
 
-    { text: 
-`Tainy & Arcángel — Me Jodí - Ma yo sé lo que tu necesitas
-Alguien como yo que te de duro mientras gritas
-Que te besen en esos lugares que te excitan
-Mami dime porque conmigo no te desquitas Que problema, nena` },
+    { text:
+`Tainy & Arcángel - Me Jodí
+Ma yo sé lo que tu necesitas
+Alguien como yo que te de duro mientras gritas` },
 
-    { text: 
-`Jhayco & mora 512 - Hoy dice que llega después de las doce
-Después de las doce, después de las doce Y anda en camionetas que parecen troces
-Que parecen troces, que parecen troces` },
+    { text:
+`Jhayco & mora - 512
+Hoy dice que llega después de las doce
+Y anda en camionetas que parecen troces` },
 
-    { text: 
-`Jhayco ft. Brray, Ryan Castro — "Pensando como un loco que si no es tu cuerpo más ninguno toco. 
-Lo de nosotros fue fuera de lo normal, tú dime si me equivoco. Y yo quisiera volver, pero tampoco no me conviene. 
-Tampoco prefiero morir con el corazón roto."` },
+    { text:
+`Jhayco ft. Brray, Ryan Castro
+Pensando como un loco que si no es tu cuerpo más ninguno toco
+Lo de nosotros fue fuera de lo normal` },
 
-    { text: 
-`Mora — "Sigo detrás de tu alma, persiguiendo recuerdos, recuerdos que me abrazan siempre que tengo miedo. 
-Miedo de no poder verte o de verte con otro. No sé cuál es peor, ninguna dice nosotros. 
-Éxitos que suenan, pero el alma duele."` },
+    { text:
+`Mora
+Sigo detrás de tu alma, persiguiendo recuerdos
+Recuerdos que me abrazan siempre que tengo miedo` },
 
-    { text: 
-`Mora ft. C. Tangana — "Baby, perdona la hora, es que el dolor no mejora. 
-Ya he intentado meditar, pero para olvidar tus besos se necesita droga. Mi tesoro, 
-mi señora. La que me descontrola, DROGA, me tienes enganchado."` },
+    { text:
+`Mora ft. C. Tangana
+Baby, perdona la hora, es que el dolor no mejora
+Para olvidar tus besos se necesita droga` },
   ];
 
   interface CarouselProps {
@@ -55,7 +54,7 @@ mi señora. La que me descontrola, DROGA, me tienes enganchado."` },
 export default function Carousel({
   slides = defaultSlides,
   intervalMs = 4500,
-  heightClass = 'h-[360px] sm:h-[420px] lg:h-[520px]',
+  heightClass = 'h-[280px] sm:h-[420px] lg:h-[520px]',
   position = 'center',
 }: CarouselProps) {
   const [active, setActive] = useState(0);
@@ -125,16 +124,16 @@ export default function Carousel({
       </div>
 
       {/* Overlay contenido */}
-      <div className={`absolute left-0 right-0 px-4 sm:px-6 ${
+      <div className={`absolute left-0 right-0 px-3 sm:px-6 ${
         position === 'top' ? 'top-4 sm:top-6' : 'top-1/2 -translate-y-1/2'
       }`}
       >
         <div className="max-w-5xl mx-auto">
-          <div className="inline-flex items-center px-3 py-1.5 rounded-full bg-red-600/90 border border-red-500 mb-3">
-            <span className="text-[11px] sm:text-xs text-white tracking-wider font-semibold">LETRAS DE MÚSICA</span>
+          <div className="inline-flex items-center px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-full bg-red-600/90 border border-red-500 mb-2 sm:mb-3">
+            <span className="text-[10px] sm:text-xs text-white tracking-wider font-semibold">LETRAS DE MÚSICA</span>
           </div>
-          <h3 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-white drop-shadow-2xl">
-            <span className="typing-caret whitespace-pre-line lyrics-text">
+          <h3 className="text-base sm:text-3xl lg:text-5xl font-extrabold text-white drop-shadow-2xl leading-tight sm:leading-relaxed">
+            <span className="typing-caret whitespace-pre-line lyrics-text break-words">
               {items[active]?.text.slice(0, typingIndex)}
             </span>
           </h3>

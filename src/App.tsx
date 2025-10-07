@@ -27,31 +27,31 @@ function App() {
     <div className="min-h-screen bg-gradient-to-br from-neutral-50 via-neutral-100 to-neutral-200">
       {/* Navigation */}
       <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-md z-50 border-b border-neutral-200 shadow-lg">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4">
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 py-2.5 sm:py-4">
           <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-2 sm:space-x-3">
+            <div className="flex items-center gap-2 sm:gap-3">
               <img
                 src={logoSymbol}
                 alt="Logo Tropical 990 AM"
-                className="w-10 h-10 sm:w-14 sm:h-14 object-contain"
+                className="w-9 h-9 sm:w-14 sm:h-14 object-contain flex-shrink-0"
               />
               <img
                 src={logoText}
                 alt="Tropical 990 AM"
-                className="h-6 sm:h-8 w-auto object-contain"
+                className="h-5 sm:h-8 w-auto object-contain flex-shrink-0"
               />
             </div>
 
-            <div className="flex space-x-4 sm:space-x-8">
+            <div className="flex gap-3 sm:gap-8">
               <a
                 href="#home"
-                className="text-xs sm:text-sm font-medium text-neutral-700 hover:text-red-600 transition-colors"
+                className="text-[10px] sm:text-sm font-medium text-neutral-700 hover:text-red-600 transition-colors whitespace-nowrap"
               >
                 INICIO
               </a>
               <button
                 onClick={scrollToContact}
-                className="text-xs sm:text-sm font-medium text-neutral-700 hover:text-red-600 transition-colors"
+                className="text-[10px] sm:text-sm font-medium text-neutral-700 hover:text-red-600 transition-colors whitespace-nowrap"
               >
                 CONTACTO
               </button>
